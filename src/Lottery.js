@@ -5,22 +5,24 @@ import './Lottery.css'
 class Lottery extends Component {
     static defaultProps = {
         title: 'Lotto',
-        maxBalls: 6,
+        numBalls: 6,
         maxNum: 40
     }
-    state = {
-        nums: [1, 1, 1, 1]
+    constructor(props) {
+        super(props)
+        this.state = { nums: Array.from({ length: this.props.numBalls }) }
+        this.generate = this.generate.bind(this)
     }
-    generate = () => {
-        let newNums = []
-        for (let x = 0; x < this.props.numBalls; x++) {
-            newNums.push(Math.floor(Math.random(this.props.maxNum) * 10) + 1)
-        }
-        this.setState({ nums: newNums })
+
+    generate() {
+        this.setState(currentState => ({
+            nums: currentState.nums.map(
+                n => Math.floor(Math.random() * this.props.maxNum) + 1
+            )
+        }));
     }
 
     render() {
-
         return (
             <div className="Lottery">
                 <h1>{this.props.title}</h1>
