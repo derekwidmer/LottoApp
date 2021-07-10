@@ -1,0 +1,29 @@
+.Lottery {
+    margin: 15px;
+    padding: 15px;
+    border: 2px solid darkgray;
+    border-radius: 10px;
+    width: 600px;
+}
+
+.Lottery-balls {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.Lottery button {
+    background-color: darkblue;
+    border: none;
+    border-radius: 10px;
+    color:  white;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.Lottery button:hover {
+    background-color: rgb(20, 20, 161);
+    cursor: pointer;
+}
