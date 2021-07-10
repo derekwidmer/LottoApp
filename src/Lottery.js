@@ -3,10 +3,14 @@ import LotteryBall from './LotteryBall'
 import './Lottery.css'
 
 class Lottery extends Component {
+    static defaultProps = {
+        title: 'Lotto',
+        maxBalls: 6,
+        maxNum: 40
+    }
     state = {
         nums: [1, 1, 1, 1]
     }
-
     generate = () => {
         let newNums = []
         for (let x = 0; x < this.props.numBalls; x++) {
